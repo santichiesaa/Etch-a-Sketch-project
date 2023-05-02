@@ -46,15 +46,15 @@ gridSizeSlider.addEventListener("input", updateGridSizeLabel);
 
 const colorPicker = document.getElementById("color-wheel");
 
-function setColor(e) {
-  const color = e.target.value;
-  const cells = document.querySelectorAll(".grid-cell");
+function setColor(wheel) {
+    const color = wheel.target.value;
+    const cells = document.querySelectorAll(".grid-cell");
 
-  cells.forEach(cell => {
-    cell.addEventListener("mouseover", () => {
-      cell.style.backgroundColor = color;
+    cells.forEach(cell => {
+        cell.addEventListener("mouseover", () => {
+            cell.style.backgroundColor = color;
+        });
     });
-  });
 }
 
 colorPicker.addEventListener("input", setColor);
